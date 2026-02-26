@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -107,23 +108,26 @@ fun loginSimples(modifier: Modifier = Modifier){
             },
             label = {
                 Text("Digite a senha")
-            }
+            },
+            visualTransformation = PasswordVisualTransformation()
         )
 
 
         Spacer(modifier = Modifier.height(150.dp))
 
-        mensagem = if(usuario == "admin" && senha == "1234"){
-            "Login realizado"
-        } else{
-            "Usuário ou senha inválidos"
-        }
+
 
         Button(onClick = {
-
+            mensagem = if(usuario == "admin" && senha == "1234"){
+                "Login realizado"
+            } else{
+                "Usuário ou senha inválidos"
+            }
         }) {
             Text(text = "Entrar")
         }
+
+        Text(mensagem)
 
 
 
