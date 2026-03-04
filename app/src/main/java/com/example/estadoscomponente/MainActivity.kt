@@ -1,5 +1,6 @@
 package com.example.estadoscomponente
 
+import alternaTema
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             EstadosComponenteTheme {
-                loginSimples(
+                alternaTema(
                     Modifier
                         .fillMaxSize()
                         .safeDrawingPadding()
